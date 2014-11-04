@@ -1,0 +1,102 @@
+.ui-menubar {
+    width: 100%;
+    position: static;
+    height: auto;
+    bottom: 2.5px;
+    letter-spacing: 1.895px;
+    background-color: rgb(128, 128, 128);
+    padding-bottom: 0;
+}
+.ui-menubar-button {
+    height: auto;
+    margin: 1.2px;
+    margin-bottom: 2px;
+    color: white;
+    display: inline-block;
+    left: 4px;
+    right: 4px;
+    bottom: 18px;
+    background-color: rgb(128, 128, 128);
+}
+.ui-menubar-button-text {
+    font-family: Calibri Light, Tahoma, Geneva, sans-serif;
+    font-size: 1.25em;
+    text-align: center;
+}
+.ui-menubar-button:hover {
+    background-color: rgb(114, 114, 114)
+    /*border: 1.5px solid black;*/
+}
+.ui-menubar-dropdown {
+    height: inherit;
+    float: left;
+    display: none;
+    background-color: #8d8d67;
+    position: absolute;
+    top: 2.15em;
+    width: auto;
+}
+.ui-menubar-dropdown-button {
+    position: static;
+    display: block;
+    width: auto;
+    height: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+#dialog-overlay {
+    display: none;
+    z-index: 1000;
+    width: 98.8%;
+    height: 95%;
+    position: fixed;
+    background-color: white;
+    opacity: 0.8;
+}
+#ui-dialog {
+    width: 450px;
+    height: 300px;
+    border: 1px solid black;
+    z-index: 1500;
+    position: fixed;
+    display: none;
+}
+#ui-dialog > #header {
+    width: 450px;
+    height: 45px;
+    border-bottom: 2px solid black;
+    font-size: 32.5px;
+    text-align: center;
+    font-family: Calibri, Verdana, sans-serif;
+    background-color: #00c435;
+    color: #2f2e2e;
+}
+#ui-dialog > #content {
+    width: 450px;
+    height: 200px;
+    border-bottom: 2px solid black;
+    font-size: 36px;
+    background-color: #53b0ea;
+    font-family: Verdana, Calibri, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+#ui-dialog > #footer {
+    height: 50px;
+    width: 450px;
+    background-color: #17ce80;
+    border-bottom: 2px solid black;
+}
+#ui-dialog > #footer > button {
+    height: 30px;
+    width: 85px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 140px;
+    background-color: rgba(211, 217, 47, 0.87);
+    border: 3px solid black;
+    padding: 2px;
+}
