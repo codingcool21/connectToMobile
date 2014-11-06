@@ -95,7 +95,8 @@ a {
     font-size: 15px;
     display: inline-block;
     margin-top: 10px;
-    margin-left: 140px;
+    position: relative;
+    left: 300px;
     background-color: rgba(211, 217, 47, 0.87);
     border: 3px solid black;
     padding: 2px;
