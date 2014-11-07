@@ -3,7 +3,8 @@
 
 // Run button configuration
   "commands": {
-        "Node version": "node --version"
+      "Start CouchDB": "parts start couchdb",
+      "Push to GitHub (master)":"cd ~; ./gitpush origin master; exit"
   },
 
 // Preview button configuration
