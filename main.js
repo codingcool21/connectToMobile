@@ -41,7 +41,7 @@ var dialogUI = {
     },
     button: function (button1_valid, button1_text, button1_action, button2_valid, button2_text, button2_action) {
         if (button1_valid == true) {
-            var a = 50 / 2 - (450 * 0.5) + "px";
+            var a = 50 / 2 - (50 * 0.5) + "px";
             var $s = "<button type='button' onclick='" + button1_action + "' style='top: " + a + "'>" + button1_text + "</button>";
             $($s).appendTo($("#ui-dialog").find("#footer"));
         } //if (button2_valid == true) {
