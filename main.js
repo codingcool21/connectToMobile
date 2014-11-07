@@ -44,7 +44,11 @@ var dialogUI = {
             var a = 50 / 2 - (450 * 0.5) + "px";
             var $s = "<button type='button' onclick='" + button1_action + "' style='top: " + a + "'>" + button1_text + "</button>";
             $($s).appendTo($("#ui-dialog").find("#footer"));
+        } if (button2_valid == true) {
+            var b = 50 / 2 - (450 * 0.5) + "px";
+            var $t = "<button type='button' onclick='" + button1_action + "' style='top: " + b + "'>" + button2_text + "</button>"
         }
+        $($t).appendTo($("#uidialog").find("#footer"));
     },
     show: function () {
         $("#ui-dialog").css("left", window.innerWidth / 2 - (450 * 0.5) + "px");
