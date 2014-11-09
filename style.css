@@ -90,15 +90,14 @@ a {
     border-bottom: 2px solid black;
     position: relative;
 }
-#ui-dialog > #footer > button {
+#ui-dialog > #footer > button.left {
     height: 30px;
     width: 85px;
     font-size: 15px;
     display: inline-block;
-    margin-top: 10px;
-    position: absolute;
-    left: 300px;
+    /*margin-top: 10px;
+    */position: absolute;
     background-color: rgba(211, 217, 47, 0.87);
-    border: 3px solid black;
+    /*border: 3px solid black;
     padding: 2px;
-}
+*/}
