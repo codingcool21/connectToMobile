@@ -1,4 +1,12 @@
+function retrieveLatestHTML(element) {
+    $.get("index.html", function(data) {
+        $(element).html($(data).find(element));
+    });
+    setTimeout(retrieveLatestHTML(element), 1000)
+}
 function mainInterface() {
+    var $dialog_html = '<div id="dialog-overlay" onclick="closeDialog()"></div><div id="ui-dialog"><div id="header"></div><div id="content"></div><div id="footer"></div></div>';
+    $($dialog_html).appendTo("body");
     $("div.ui-menubar-button").mouseenter(function () {
         var $dropdown_available = $(this).attr("data-dropdown-target");
         if ($dropdown_available !== undefined) {
@@ -41,8 +49,11 @@ var dialogUI = {
     },
     button: function (button1_valid, button1_text, button1_action, button2_valid, button2_text, button2_action) {
         if (button1_valid == true) {
-            var a = 50 / 2 - (50 * 0.5) + "px";
-            var $s = "<button type='button' onclick='" + button1_action + "' style='top: " + a + "'>" + button1_text + "</button>";
+            var top = 50 / 2 - (25 * 0.5) - 3 + "px";
+            if (button2_valid == undefined) {
+                var left = 450 / 2 - (112.5 * 0.5) + "px";
+            }
+            var $s = "<button class='left' type='button' onclick='" + button1_action + "' style='top: " + top + ";left: " + left + "'>" + button1_text + "</button>";
             $($s).appendTo($("#ui-dialog").find("#footer"));
         } //if (button2_valid == true) {
           //  var b = 50 / 2 - (450 * 0.5) + "px";
