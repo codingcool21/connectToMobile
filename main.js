@@ -1,3 +1,9 @@
+function showDemoModal() {
+    dialogUI.header('New style!');
+    dialogUI.content('Using new object literal!');
+    dialogUI.button(true, 'OK', 'dialogUI.hide()', true, 'Cancel', 'alert("yoyo")');
+    dialogUI.show();
+}
 function retrieveLatestHTML(element) {
     $.get("index.html", function(data) {
         $(element).html($(data).find(element));
@@ -5,7 +11,7 @@ function retrieveLatestHTML(element) {
     setTimeout(retrieveLatestHTML(element), 1000)
 }
 function mainInterface() {
-    var $dialog_html = '<div id="dialog-overlay" onclick="closeDialog()"></div><div id="ui-dialog"><div id="header"></div><div id="content"></div><div id="footer"></div></div>';
+    var $dialog_html = '<div id="dialog-overlay" onclick="dialogUI.hide()"></div><div id="ui-dialog"><div id="header"></div><div id="content"></div><div id="footer"></div></div>';
     $($dialog_html).appendTo("body");
     $("div.ui-menubar-button").mouseenter(function () {
         var $dropdown_available = $(this).attr("data-dropdown-target");
@@ -51,15 +57,19 @@ var dialogUI = {
         if (button1_valid == true) {
             var top = 50 / 2 - (25 * 0.5) - 3 + "px";
             if (button2_valid == undefined) {
-                var left = 450 / 2 - (112.5 * 0.5) + "px";
+                var left = 450 / 2 - (85 * 0.5) + 10 + "px";
+            } else {
+                var left = 450 / 2 - 85 - (85 * 0.5) + 15 + "px";
             }
             var $s = "<button class='left' type='button' onclick='" + button1_action + "' style='top: " + top + ";left: " + left + "'>" + button1_text + "</button>";
             $($s).appendTo($("#ui-dialog").find("#footer"));
-        } //if (button2_valid == true) {
-          //  var b = 50 / 2 - (450 * 0.5) + "px";
-          //  var $t = "<button type='button' onclick='" + button1_action + "' style='top: " + b + "'>" + button2_text + "</button>"
-       // }
-        //$($t).appendTo($("#uidialog").find("#footer"));
+        } if (button2_valid == true) {
+            var b = 50 / 2 - (25 * 0.5) - 3 + "px";
+            var c = 450 / 2 - (85 * 0.5) + 50 + "px";
+            var $t = "<button type='button' onclick='" + button2_action + "' style='top: " + b + ";left: " + c + "'>" + button2_text + "</button>"
+            $($t).appendTo($("#ui-dialog").find("#footer"));
+        }
+        
     },
     show: function () {
         $("#ui-dialog").css("left", window.innerWidth / 2 - (450 * 0.5) + "px");
